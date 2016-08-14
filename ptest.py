@@ -14,5 +14,12 @@ try:
 	libc.SayHello()
 	libc.SayGoodbye()
 	
+	returnInt = libc.ReturnInt()
+	print ("Returned int is " + str(returnInt))
+	
+	libc.ReturnFloat.restype = c_float
+	returnFloat = libc.ReturnFloat()
+	print ("Returned float is " + str(returnFloat))
+	
 except Exception as ex:
 	print ("[libc Calling Error] " + str(ex))

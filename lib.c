@@ -10,3 +10,13 @@ void SayGoodbye()
 {
 	printf ("Goodbye, cruel world!\n");
 }
+
+int ReturnInt()
+{
+	return 10;
+}
+
+float ReturnFloat()
+{
+	return 25.22343;
+}

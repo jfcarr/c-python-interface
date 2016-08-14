@@ -7,5 +7,9 @@ int main()
 
 	SayGoodbye();
 
+	printf("Result of ReturnInt is %d\n", ReturnInt());
+
+	printf("Result of ReturnFloat is %f\n", ReturnFloat());
+
 	return 0;
 }
