@@ -23,16 +23,12 @@ slib:
 	$(COMPILER) -shared -Wl,-soname,libshared.so.1 -o libshared.so lib.o
 
 clean:
-	$(DELETER) test.o
-	$(DELETER) lib.o
-	$(DELETER) test.exe
-	$(DELETER) test
+	$(DELETER) test.o lib.o
+	$(DELETER) test.exe test
 	$(DELETER) libshared.so
 
 format:
 	$(FORMATTER) test.c
 	$(FORMATTER) lib.c
 	$(FORMATTER) lib.h
-	$(DELETER) test.c.orig
-	$(DELETER) lib.c.orig
-	$(DELETER) lib.h.orig
+	$(DELETER) test.c.orig lib.c.orig lib.h.orig
