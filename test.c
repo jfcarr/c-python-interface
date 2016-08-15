@@ -11,5 +11,10 @@ int main()
 
 	printf("Result of ReturnFloat is %f\n", ReturnFloat());
 
+	SetStatic(10);
+	printf ("Static value is %d\n", GetStatic());
+	SetStatic(20);
+	printf ("Static value is %d\n", GetStatic());
+
 	return 0;
 }

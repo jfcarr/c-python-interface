@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "lib.h"
 
+static int staticVar;
+
 void SayHello()
 {
 	printf ("Hello, world!\n");
@@ -9,6 +11,16 @@ void SayHello()
 void SayGoodbye()
 {
 	printf ("Goodbye, cruel world!\n");
+}
+
+int GetStatic()
+{
+	return staticVar;
+}
+
+void SetStatic (int newVal)
+{
+	staticVar = newVal;
 }
 
 int ReturnInt()

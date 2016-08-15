@@ -21,5 +21,10 @@ try:
 	returnFloat = libc.ReturnFloat()
 	print ("Returned float is " + str(returnFloat))
 	
+	libc.SetStatic(10)
+	print ("Static value is " + str(libc.GetStatic()))
+	libc.SetStatic(20)
+	print ("Static value is " + str(libc.GetStatic()))
+	
 except Exception as ex:
 	print ("[libc Calling Error] " + str(ex))
