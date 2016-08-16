@@ -32,3 +32,8 @@ float ReturnFloat()
 {
 	return 25.22343;
 }
+
+void PointerReference (char *inputString)
+{
+	sprintf (inputString, "New Value");
+}
