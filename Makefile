@@ -9,6 +9,8 @@ default:
 	@echo ' clean'
 	@echo ' format'
 
+all: test slib
+
 test: test.o lib.o
 	$(COMPILER) -o test test.o lib.o
 
