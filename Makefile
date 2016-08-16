@@ -4,6 +4,7 @@ FORMATTER = astyle -t --style=kr
 
 default:
 	@echo 'Targets:'
+	@echo ' all      (build everything)'
 	@echo ' test     (application)'
 	@echo ' slib     (create shared library)'
 	@echo ' clean'
