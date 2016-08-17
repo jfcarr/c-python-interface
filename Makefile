@@ -15,7 +15,7 @@ all: test slib
 test: test.o lib.o
 	$(COMPILER) -o test test.o lib.o
 
-test.o: test.c
+test.o: test.c lib.h
 	$(COMPILER) -c test.c
 
 lib.o: lib.c lib.h
