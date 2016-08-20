@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import sys
 from ctypes import *
@@ -32,11 +32,11 @@ try:
 	libc.SetStatic(20)
 	print ("Static value is " + str(libc.GetStatic()))
 	
-	HeaderMessage("Pointer References (NOT working)")
-	returnString = "Old Value";
-	print ("String is " + returnString)
-	libc.PointerReference(returnString)
-	print ("String is now " + returnString)
+	HeaderMessage("Pointer References")
+	myString = c_char_p("Original Value")
+	print ("String is " + myString.value)
+	libc.PointerReference(myString)
+	print ("String is now " + myString.value)
 	
 except Exception as ex:
 	print ("[libc Calling Error] " + str(ex))
