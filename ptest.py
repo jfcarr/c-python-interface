@@ -7,15 +7,16 @@ def HeaderMessage(message):
 	print ("\n___" + message + "___")
 
 def LibCTest():
+	HeaderMessage("___ C Test ___")
+
 	try:
 		libc = cdll.LoadLibrary("./libshared.so")
 
 	except Exception as ex:
-		print ("[LoadLibrary Error] " + str(ex))
+		print ("[C LoadLibrary Error] " + str(ex))
 		sys.exit()
 
 	try:
-		HeaderMessage("___ C Test ___")
 		HeaderMessage("Simple Printing")
 		libc.SayHello()
 		libc.SayGoodbye()
@@ -43,5 +44,16 @@ def LibCTest():
 	except Exception as ex:
 		print ("[libc Calling Error] " + str(ex))
 
+def LibCppTest():
+	HeaderMessage("___ C++ Test ___")
+
+	try:
+		olibc = cdll.LoadLibrary("./olibshared.so")
+
+	except Exception as ex:
+		print ("[C++ LoadLibrary Error] " + str(ex))
+		sys.exit()
+
 if __name__ == '__main__':
 	LibCTest()
+	LibCppTest()
