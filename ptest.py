@@ -43,4 +43,5 @@ def LibCTest():
 	except Exception as ex:
 		print ("[libc Calling Error] " + str(ex))
 
-LibCTest()
+if __name__ == '__main__':
+	LibCTest()
