@@ -44,16 +44,5 @@ def LibCTest():
 	except Exception as ex:
 		print ("[libc Calling Error] " + str(ex))
 
-def LibCppTest():
-	HeaderMessage("___ C++ Test ___")
-
-	try:
-		olibc = cdll.LoadLibrary("./olibshared.so")
-
-	except Exception as ex:
-		print ("[C++ LoadLibrary Error] " + str(ex))
-		sys.exit()
-
 if __name__ == '__main__':
 	LibCTest()
-	LibCppTest()
