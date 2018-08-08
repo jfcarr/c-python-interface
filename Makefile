@@ -5,18 +5,18 @@ FORMATTER = astyle -t --style=kr
 default:
 	@echo 'Targets:'
 	@echo ' all      (build everything)'
-	@echo ' test     (application)'
+	@echo ' cclient  (application)'
 	@echo ' slib     (create shared library - C)'
 	@echo ' clean'
 	@echo ' format'
 
-all: test slib
+all: cclient slib
 
-test: test.o lib.o
-	$(COMPILER) -o test test.o lib.o
+cclient: cclient.o lib.o
+	$(COMPILER) -o cclient cclient.o lib.o
 
-test.o: test.c lib.h
-	$(COMPILER) -c test.c
+cclient.o: cclient.c lib.h
+	$(COMPILER) -c cclient.c
 
 lib.o: lib.c lib.h
 	$(COMPILER) -c lib.c
@@ -26,13 +26,13 @@ slib:
 	$(COMPILER) -shared -Wl,-soname,libshared.so.1 -o libshared.so lib.o
 
 clean:
-	$(DELETER) test.o lib.o
-	$(DELETER) test.exe test
+	$(DELETER) cclient.o lib.o
+	$(DELETER) cclient.exe cclient
 	$(DELETER) libshared.so
 	$(DELETER) *.stackdump
+	$(DELETER) cclient.c.orig lib.c.orig lib.h.orig
 
 format:
-	$(FORMATTER) test.c
+	$(FORMATTER) cclient.c
 	$(FORMATTER) lib.c
 	$(FORMATTER) lib.h
-	$(DELETER) test.c.orig lib.c.orig lib.h.orig
