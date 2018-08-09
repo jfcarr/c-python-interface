@@ -2,3 +2,5 @@
 *.so
 cclient
 cclient.exe
+cppclient
+cppclient.exe
