@@ -1,6 +1,6 @@
 COMPILER = g++
 DELETER = -rm -f
-FORMATTER = astyle -t --style=kr
+FORMATTER = astyle -t --style=stroustrup
 
 default:
 	@echo 'Targets:'
