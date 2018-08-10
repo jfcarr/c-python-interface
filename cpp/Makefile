@@ -18,7 +18,7 @@ cppclient: cppclient.o lib.o
 cppclient.o: cppclient.cpp
 	$(COMPILER) -c cppclient.cpp
 
-lib.o: lib.cpp
+lib.o: lib.cpp lib.h
 	$(COMPILER) -c lib.cpp
 
 slib:
